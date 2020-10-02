@@ -24,6 +24,7 @@
 ###### 1 Способ. Уже собранный jar-файл (Iterator-1.0-jar-with-dependencies.jar) расположен в корне проекта.
 Пример запуска через cmd:  java -jar Iterator-1.0-jar-with-dependencies.jar -o outputFile.txt -i fibonacci -c 15 -b 20 -t 100
 где о - файл для записи результата, i - тип итерации, с - количество итераций, b - нижняя граница диапазона, t - верхня граница диапазона
+
 Типы итерации: fibanacci, reverse
 
 ###### 2 Способ.Тест расположен в директории src/test/java.
