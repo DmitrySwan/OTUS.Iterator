@@ -25,7 +25,7 @@
 Пример запуска через cmd:  java -jar Iterator-1.0-jar-with-dependencies.jar -o outputFile.txt -i fibonacci -c 15 -b 20 -t 100
 где о - файл для записи результата, i - тип итерации, с - количество итераций, b - нижняя граница диапазона, t - верхня граница диапазона
 
-Типы итерации: fibanacci, reverse
+Типы итерации: fibonacci, reverse
 
 ###### 2 Способ.Тест расположен в директории src/test/java.
 expected файл лежит в src/test/resources.
