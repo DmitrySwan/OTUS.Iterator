@@ -1,4 +1,4 @@
-public class FibonacciReverseFactory implements IteratorAbstractFactory {
+class FibonacciReverseFactory implements IteratorAbstractFactory {
 
     @Override
     public Iterator createIterator() {

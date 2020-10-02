@@ -1,13 +1,7 @@
 import org.apache.log4j.Logger;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.Arrays;
-import java.util.Scanner;
 
 class IteratorApplication {
 
@@ -17,15 +11,15 @@ class IteratorApplication {
     private int topIntervalBorder;
     private int count;
 
-    public void setBottomIntervalBorder(int bottomIntervalBorder) {
+    void setBottomIntervalBorder(int bottomIntervalBorder) {
         this.bottomIntervalBorder = bottomIntervalBorder;
     }
 
-    public void setTopIntervalBorder(int topIntervalBorder) {
+    void setTopIntervalBorder(int topIntervalBorder) {
         this.topIntervalBorder = topIntervalBorder;
     }
 
-    public void setCount(int count) {
+    void setCount(int count) {
         this.count = count;
     }
 
@@ -40,11 +34,12 @@ class IteratorApplication {
         this.iterator = factory.createIterator();
     }
 
-    void getFibonacciFilteredByRange() throws FileNotFoundException {
+    void getFilteredFibonacci() throws FileNotFoundException {
         String className = iterator.getClass().getName();
         int[] array = iterator.getFibonacci(count);
-        log.info(className + " #Result array: " + Arrays.toString(array));
-        printToOutputFile(array);
+        int[] resultArray = getFilteredByRange(array);
+        log.info(className + " #Result array: " + Arrays.toString(resultArray));
+        printToOutputFile(resultArray);
     }
 
     private void printToOutputFile(int[] array) {
@@ -58,5 +53,10 @@ class IteratorApplication {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public int[] getFilteredByRange(int[] array) {
+        log.info("#getFilteredByRange array: " + Arrays.toString(array));
+        return Arrays.stream(array).filter(x -> x > bottomIntervalBorder && x < topIntervalBorder).toArray();
     }
 }

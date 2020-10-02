@@ -1,3 +1,3 @@
-public interface IteratorAbstractFactory {
+interface IteratorAbstractFactory {
     Iterator createIterator();
 }

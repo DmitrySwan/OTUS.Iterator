@@ -1,4 +1,4 @@
-public interface Iterator {
+interface Iterator {
 
     int[] getFibonacci(int n);
 

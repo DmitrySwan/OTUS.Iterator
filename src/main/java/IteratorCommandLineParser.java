@@ -1,10 +1,4 @@
-import org.apache.commons.cli.CommandLine;
-import org.apache.commons.cli.CommandLineParser;
-import org.apache.commons.cli.DefaultParser;
-import org.apache.commons.cli.HelpFormatter;
-import org.apache.commons.cli.Option;
-import org.apache.commons.cli.Options;
-import org.apache.commons.cli.ParseException;
+import org.apache.commons.cli.*;
 
 public class IteratorCommandLineParser {
     public static final String ITERATOR = "iterator";
@@ -24,7 +18,7 @@ public class IteratorCommandLineParser {
     public static CommandLine parseCMDArgs(String[] args) {
         configureOption("o", OUTPUT, "output file path");
         configureOption("c", COUNT, "count of fibonacci numbers");
-        configureOption("iter", ITERATOR, "iterator type");
+        configureOption("i", ITERATOR, "iterator type");
         configureOption("b", BOTTOM, "bottom limit");
         configureOption("t", TOP, "top limit");
 
